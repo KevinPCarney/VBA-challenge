@@ -92,6 +92,18 @@ Sub stock_ticker():
             
             
             ws.Cells(k, 10).Value = quart_change ' column J
+
+            If (ws.Cells(k, 10).Value > 0) Then ' establish the color coding based on value for row J
+            ws.Cells(k, 10).Interior.ColorIndex = 4
+            
+        ElseIf (ws.Cells(k, 10).Value < 0) Then
+            ws.Cells(k, 10).Interior.ColorIndex = 3
+            
+        Else
+            ws.Cells(k, 10).Interior.ColorIndex = 2
+            
+        End If
+
             ws.Cells(k, 11).Value = perc_change ' column K
             
            
